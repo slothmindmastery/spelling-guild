@@ -1,19 +1,33 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
+import SoundstoneCard from '../components/SoundstoneCard'
 
 export default function SoundstoneVault() {
-  const [soundstones, setSoundstones] = useState([])
+  const [sounds, setSounds] = useState([])
 
   useEffect(() => {
-    async function getSoundstones() {
-      const { data } = await supabase
-        .from('soundstones')
+    async function getSounds() {
+      const { data, error } = await supabase
+        .from('sounds')
         .select('*')
+        // MVP: Only show Soundstones that are part of the
+        // Letters and Sounds progression. Additional Soundstones
+        // such as schwa, suffixes and rare sounds remain in the
+        // database and can be introduced later.
+        .not('letters_and_sounds_phase', 'is', null)
+        .order('letters_and_sounds_phase')
+        .order('letters_and_sounds_set')
+        .order('display_order')
 
-      setSoundstones(data || [])
+      if (error) {
+        console.error(error)
+        return
+      }
+
+      setSounds(data)
     }
 
-    getSoundstones()
+    getSounds()
   }, [])
 
   return (
@@ -22,16 +36,10 @@ export default function SoundstoneVault() {
 
       <h2>Soundstone Vault</h2>
 
-      <p>Soundstones loaded: {soundstones.length}</p>
+      <p>Soundstones loaded: {sounds.length}</p>
 
-      {soundstones.map((soundstone) => (
-        <section key={soundstone.id}>
-          <h3>{soundstone.name}</h3>
-
-          <p>{soundstone.ipa}</p>
-
-          <p>{soundstone.description}</p>
-        </section>
+      {sounds.map((sound) => (
+        <SoundstoneCard key={sound.sound_code} sound={sound} />
       ))}
     </>
   )

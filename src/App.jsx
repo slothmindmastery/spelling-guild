@@ -1,4 +1,4 @@
-import SoundstoneVault from './pages/SoundstoneVault'
+import SoundstoneVault from './scenes/SoundstoneVault/SoundstoneVaultScene'
 
 function App() {
   return <SoundstoneVault />

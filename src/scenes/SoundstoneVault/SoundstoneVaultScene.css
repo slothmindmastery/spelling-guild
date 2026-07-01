@@ -1,0 +1,46 @@
+.soundstone-vault {
+  min-height: 100vh;
+  padding: 2rem;
+  color: #f7e7c4;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(130, 85, 190, 0.35), transparent 35%),
+    linear-gradient(180deg, #16111f, #070509);
+}
+
+.soundstone-vault__header {
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+.soundstone-vault__header h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.soundstone-vault__header p {
+  font-size: 1.2rem;
+}
+
+.soundstone-vault__stage {
+  min-height: 520px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 3rem 2rem 2rem;
+  border-radius: 32px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(120, 70, 180, 0.35), transparent 45%);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.65);
+}
+
+.soundstone-vault__rail {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: 2rem;
+  width: max-content;
+}
+
+.soundstone-vault__rail > * {
+  flex: 0 0 auto;
+}

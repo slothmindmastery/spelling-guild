@@ -1,0 +1,40 @@
+.soundstone {
+  flex: 0 0 auto;
+  width: 180px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+  color: inherit;
+}
+
+.soundstone__stone {
+  width: 180px;
+  height: 130px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255,255,255,.9), transparent 12%),
+    radial-gradient(circle at center, #d5c6ef, #9d87c7 70%, #5a447d);
+
+  border: 3px solid #43305e;
+
+  transition: transform .2s ease;
+}
+
+.soundstone:hover .soundstone__stone {
+  transform: translateY(-6px);
+}
+
+.soundstone__name {
+  font-weight: 700;
+}
+
+.soundstone__example {
+  margin-top: .75rem;
+}

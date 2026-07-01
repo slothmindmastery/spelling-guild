@@ -2,11 +2,17 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+html,
+body,
+#root {
   min-width: 320px;
   min-height: 100vh;
+  margin: 0;
+}
+
+body {
   font-family: system-ui, sans-serif;
+  background: #09060d;
 }
 
 button {

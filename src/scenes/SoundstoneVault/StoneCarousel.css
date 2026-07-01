@@ -1,8 +1,8 @@
 .stone-carousel {
+  position: relative;
   min-height: 520px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 4rem 2rem 2rem;
+  overflow: hidden;
+  padding: 4rem 1rem 2rem;
   border-radius: 32px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 45%),
@@ -11,19 +11,48 @@
 }
 
 .stone-carousel__track {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  gap: 2rem;
-  width: max-content;
-}
-
-.stone-carousel__track > * {
-  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
 }
 
 .stone-carousel__item {
-  transform: translateY(var(--stone-y)) scale(var(--stone-scale));
+  position: absolute;
+  left: calc(50% - 105px);
+  bottom: 80px;
   transform-origin: bottom center;
-  transition: transform 0.3s ease;
+}
+
+.stone-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translateY(-50%);
+  z-index: 100;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(247, 231, 196, 0.5);
+  border-radius: 999px;
+  background: rgba(10, 7, 16, 0.75);
+  color: #f7e7c4;
+  cursor: pointer;
+  font-size: 1.5rem;
+
+  transition: background 0.2s ease;
+}
+
+.stone-carousel__arrow:hover {
+  background: rgba(40, 28, 60, 0.9);
+}
+
+.stone-carousel__arrow:first-of-type {
+  left: 16px;
+}
+
+.stone-carousel__arrow:last-of-type {
+  right: 16px;
 }

@@ -1,0 +1,24 @@
+.pedestal {
+  flex: 0 0 auto;
+  width: 210px;
+  display: grid;
+  justify-items: center;
+}
+
+.pedestal__top {
+  position: relative;
+  z-index: 2;
+}
+
+.pedestal__base {
+  width: 140px;
+  height: 56px;
+  margin-top: -8px;
+  background:
+    linear-gradient(180deg, #756083, #342640);
+  border: 2px solid #1f1728;
+  border-radius: 12px 12px 22px 22px;
+  box-shadow:
+    0 16px 24px rgba(0, 0, 0, 0.45),
+    inset 0 8px 12px rgba(255, 255, 255, 0.12);
+}

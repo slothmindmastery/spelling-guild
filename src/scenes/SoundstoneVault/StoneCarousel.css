@@ -1,0 +1,29 @@
+.stone-carousel {
+  min-height: 520px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4rem 2rem 2rem;
+  border-radius: 32px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(120, 70, 180, 0.35), transparent 45%);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.65);
+}
+
+.stone-carousel__track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: 2rem;
+  width: max-content;
+}
+
+.stone-carousel__track > * {
+  flex: 0 0 auto;
+}
+
+.stone-carousel__item {
+  transform: translateY(var(--stone-y)) scale(var(--stone-scale));
+  transform-origin: bottom center;
+  transition: transform 0.3s ease;
+}

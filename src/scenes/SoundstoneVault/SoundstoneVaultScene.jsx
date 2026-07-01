@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabase'
-import Soundstone from './Soundstone'
+import VaultBackground from './VaultBackground'
+import StoneCarousel from './StoneCarousel'
 import './SoundstoneVaultScene.css'
 
 export default function SoundstoneVaultScene() {
@@ -28,20 +29,16 @@ export default function SoundstoneVaultScene() {
   }, [])
 
   return (
-    <main className="soundstone-vault">
-      <header className="soundstone-vault__header">
-        <h1>Soundstone Vault</h1>
-        <p>Discover and restore the sounds of the Guild.</p>
-        <p>{sounds.length} / 44 Soundstones</p>
-      </header>
+    <VaultBackground>
+      <main className="soundstone-vault">
+        <header className="soundstone-vault__header">
+          <h1>Soundstone Vault</h1>
+          <p>Discover and restore the sounds of the Guild.</p>
+          <p>{sounds.length} / 44 Soundstones</p>
+        </header>
 
-      <section className="soundstone-vault__stage">
-        <div className="soundstone-vault__rail">
-          {sounds.map((sound) => (
-            <Soundstone key={sound.sound_code} sound={sound} />
-          ))}
-        </div>
-      </section>
-    </main>
+        <StoneCarousel sounds={sounds} />
+      </main>
+    </VaultBackground>
   )
 }

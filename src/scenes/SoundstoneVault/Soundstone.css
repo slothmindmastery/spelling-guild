@@ -1,40 +1,34 @@
 .soundstone {
-  flex: 0 0 auto;
-  width: 180px;
+  position: relative;
+  width: 240px;
+  height: 240px;
   border: none;
   background: transparent;
   cursor: pointer;
-  text-align: center;
   padding: 0;
   color: inherit;
-}
-
-.soundstone__stone {
-  width: 180px;
-  height: 130px;
-
   display: grid;
   place-items: center;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(circle at 35% 25%, rgba(255,255,255,.9), transparent 12%),
-    radial-gradient(circle at center, #d5c6ef, #9d87c7 70%, #5a447d);
-
-  border: 3px solid #43305e;
-
-  transition: transform .2s ease;
 }
 
-.soundstone:hover .soundstone__stone {
-  transform: translateY(-6px);
+.soundstone__image {
+  width: 120%;
+  height: 120%;
+  object-fit: contain;
 }
 
 .soundstone__name {
-  font-weight: 700;
-}
-
-.soundstone__example {
-  margin-top: .75rem;
+  position: absolute;
+  z-index: 2;
+  max-width: 110px;
+  color: #f4ecff;
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.75),
+    0 0 14px rgba(170, 100, 255, 0.9),
+    0 2px 3px rgba(0, 0, 0, 0.75);
+  pointer-events: none;
 }

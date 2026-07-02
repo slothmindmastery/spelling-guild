@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import dormantStone from '../../assets/images/soundstones/soundstone-dormant.png'
 import './Soundstone.css'
 
 export default function Soundstone({ sound }) {
@@ -13,9 +14,13 @@ export default function Soundstone({ sound }) {
         damping: 18,
       }}
     >
-      <div className="soundstone__stone">
-        <span className="soundstone__name">{sound.name}</span>
-      </div>
+      <img
+        src={dormantStone}
+        alt=""
+        className="soundstone__image"
+      />
+
+      <span className="soundstone__name">{sound.name}</span>
     </motion.button>
   )
 }
